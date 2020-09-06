@@ -9,10 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SubmissionActivity"
+            android:parentActivityName=".LeaderBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
+
             android:name=".LeaderBoardActivity"
             android:label="@string/title_activity_leader_board"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/TransparentStatusBar">

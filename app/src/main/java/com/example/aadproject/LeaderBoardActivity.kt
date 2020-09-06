@@ -1,6 +1,8 @@
 package com.example.aadproject
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.aadproject.adapters.LeaderBoardPagerAdapter
@@ -27,8 +29,19 @@ class LeaderBoardActivity:AppCompatActivity() {
                }).attach()
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            this.title = "LEADERBORD"
+            this.title = "LEADERBOARD"
 
         }
+
+        binding.submit.setOnClickListener {
+            Toast.makeText(this,"Submit button",Toast.LENGTH_LONG).show()
+            goToSubmissionActivity()
+        }
+    }
+
+    private fun goToSubmissionActivity() {
+       Intent(this,SubmissionActivity::class.java).apply {
+           startActivity(this)
+       }
     }
 }
