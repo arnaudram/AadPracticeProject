@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="skillIqViewModel"
+            type="com.example.aadproject.viewmodels.SkillIqLeaderViewModel" />
 
     </data>
 
@@ -17,6 +20,9 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/item_skill_iq_leader"
             android:padding="6dp"
+            tools:itemCount="16"
+            android:background="@color/background_recycle_view"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

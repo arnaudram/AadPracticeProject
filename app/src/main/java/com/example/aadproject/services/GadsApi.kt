@@ -1,6 +1,7 @@
 package com.example.aadproject.services
 
 import com.example.aadproject.data.EntityGads
+import com.example.aadproject.data.EntityGadsSkill
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -21,6 +22,9 @@ private val moshi= Moshi.Builder()
 interface GadsApiService {
     @GET(" api/hours")
     fun getLearningLeaders():Deferred<List<EntityGads>>
+
+    @GET("api/skilliq")
+    fun getSkillIQLeaders():Deferred<List<EntityGadsSkill>>
 
 }
 

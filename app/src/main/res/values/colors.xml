@@ -6,4 +6,5 @@
     <color name="background_black">#000000</color>
     <color name="color_white">#ffffff</color>
     <color name="color_orange">#F2FF6D00</color>
+    <color name="background_recycle_view">#F7D8D3D3</color>
 </resources>

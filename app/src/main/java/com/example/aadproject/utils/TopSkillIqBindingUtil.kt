@@ -3,29 +3,30 @@ package com.example.aadproject.utils
 import android.net.Uri
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.example.aadproject.R
 import com.example.aadproject.data.EntityGads
+import com.example.aadproject.data.EntityGadsSkill
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_learning_leader.view.*
 
-@BindingAdapter("bind_learner_badge")
-fun ImageView.topLearnerBadge(item: EntityGads) {
+
+@BindingAdapter("bind_skill_iq_badge")
+fun ImageView.topSkillIqBadge(item: EntityGadsSkill) {
     val uri = Uri.parse(item.badgeUrl).buildUpon().scheme("https").build()
     Picasso.get().load(uri)
         .fit()
         .centerInside()
+
         .into(this)
 
 }
 
-@BindingAdapter("bind_learner_name")
-fun TextView.topLearnerName(item: EntityGads) {
+@BindingAdapter("bind_skill_iq_name")
+fun TextView.topSkillIqName(item: EntityGadsSkill) {
     this.text = item.name
 }
 
-@BindingAdapter("bind_learner_description")
-fun TextView.topLearnerDescription(item: EntityGads) {
-    this.text = resources.getString(R.string.learning_description, item.hours, item.country)
+@BindingAdapter("bind_skill_iq_description")
+fun TextView.topSkilliqDescription(item: EntityGadsSkill) {
+    this.text = resources.getString(R.string.skill_iq_description, item.score, item.country)
 }
