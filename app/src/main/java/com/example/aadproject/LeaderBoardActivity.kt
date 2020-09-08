@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.aadproject.adapters.LeaderBoardPagerAdapter
+import com.example.aadproject.data.EntityGads
 import com.example.aadproject.databinding.ActivityLeaderboardBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -37,6 +38,8 @@ class LeaderBoardActivity:AppCompatActivity() {
             Toast.makeText(this,"Submit button",Toast.LENGTH_LONG).show()
             goToSubmissionActivity()
         }
+
+
     }
 
     private fun goToSubmissionActivity() {

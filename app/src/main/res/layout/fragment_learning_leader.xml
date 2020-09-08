@@ -15,12 +15,15 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+
             android:id="@+id/recycleview_learning_leader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_learning_leader"
             tools:itemCount="16"
+            android:background="#F7D8D3D3"
             android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

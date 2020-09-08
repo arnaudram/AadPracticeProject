@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AadProject</string>
     <string name="title_activity_leader_board">LeaderBoardActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="learning_description">%1$d Learning hours, %2$s.</string>
+    <string name="skill_iq_description">%1$d Skill IQ Score,%2s</string>
     <string name="text_submit">Submit</string>
 </resources>

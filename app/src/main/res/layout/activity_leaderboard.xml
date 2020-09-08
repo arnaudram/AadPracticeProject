@@ -68,13 +68,23 @@ app:titleMarginStart="?actionBarSize"
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            android:layout_height="match_parent">
 
-        </androidx.viewpager2.widget.ViewPager2>
+
+
+
+             <androidx.viewpager2.widget.ViewPager2
+
+                 android:id="@+id/viewpager"
+                 android:layout_width="match_parent"
+app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+
+                 android:layout_height="match_parent">
+
+             </androidx.viewpager2.widget.ViewPager2>
+
+
+
+
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/submit"

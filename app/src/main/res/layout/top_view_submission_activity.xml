@@ -28,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="47dp"
         android:layout_marginEnd="47dp"
-        android:drawableStart="@drawable/logo"
         android:gravity="start"
 
         android:lines="2"
@@ -41,6 +40,7 @@
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toEndOf="@+id/topLeftCustomView2"
         app:layout_constraintTop_toBottomOf="@+id/topLeftCustomView2"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="0.54"
+        app:drawableStartCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
