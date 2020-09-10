@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="submissionViewModel"
             type="com.example.aadproject.viewmodels.SubmissionViewModel" />
@@ -20,49 +21,35 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/layout_height_appbar_leaderbord_activity"
             android:background="@color/background_black"
             android:fitsSystemWindows="true"
-
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
-           <RelativeLayout
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
-               <com.google.android.material.appbar.MaterialToolbar
-                   android:id="@+id/toolbar"
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fitsSystemWindows="true"
+                    app:titleTextColor="@color/color_white" />
 
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
+                <include
 
+                    layout="@layout/top_view_submission_activity">
 
-
-                   android:layout_centerVertical="true"
-
-                   android:fitsSystemWindows="true"
-
-
-
-                   app:titleTextColor="@color/color_white">
+                </include>
 
 
-               </com.google.android.material.appbar.MaterialToolbar>
-              <include
-
-                  layout="@layout/top_view_submission_activity">
-
-              </include>
-
-
-           </RelativeLayout>
-
-
-
+            </RelativeLayout>
 
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -78,11 +65,11 @@
             android:id="@+id/tv_project_submission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/margin_end_fab_leaderboar_activity"
             android:gravity="center"
             android:text="Project Submission"
             android:textColor="@color/color_orange"
-            android:textSize="14sp"
+            android:textSize="@dimen/text_size_project_submission"
 
             app:layout_constraintBottom_toTopOf="@id/progressBar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -112,13 +99,13 @@
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/button_submit"
-            android:layout_width="175dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="112dp"
+            android:layout_width="@dimen/layout_with_submit_button_submission_activity"
+            android:layout_height="@dimen/layout_height_button_submission_submission_activity"
+            android:layout_marginTop="@dimen/margin_top_button_submission_submission_activity"
+            android:layout_marginBottom="@dimen/margin_bottom_button_submission_submission_activity"
             android:gravity="center"
-            android:text="@string/text_submit"
             android:onClick="@{()->submissionViewModel.submitEvent()}"
+            android:text="@string/text_submit"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="@color/color_white"
             app:backgroundTint="@color/color_orange"
@@ -135,17 +122,17 @@
             android:id="@+id/textInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="@dimen/margin_vertical_fab_leaderboar_activity"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/margin_end_fab_leaderboar_activity"
             android:baselineAligned="true"
 
-            android:hint="First Name"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
+            android:hint="@string/hint_edit_first_name"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusBottomStart="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopStart="@dimen/radius_text_layout"
             app:layout_constraintBaseline_toBaselineOf="@id/input_layout_last_name"
             app:layout_constraintBottom_toTopOf="@id/input_layout_adressEmail"
             app:layout_constraintEnd_toStartOf="@+id/guideline12"
@@ -167,12 +154,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Last Name"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
+
+            android:layout_marginEnd="@dimen/margin_vertical_fab_leaderboar_activity"
+            android:hint="@string/hint_edit_last_name"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusBottomStart="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopStart="@dimen/radius_text_layout"
             app:layout_constraintBottom_toTopOf="@id/input_layout_adressEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline12"
@@ -191,15 +179,15 @@
             android:id="@+id/input_layout_adressEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="16dp"
-            android:hint="Email Address"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
+            android:layout_marginStart="@dimen/margin_vertical_fab_leaderboar_activity"
+            android:layout_marginTop="@dimen/margin_top_button_submission_submission_activity"
+            android:layout_marginEnd="@dimen/margin_vertical_fab_leaderboar_activity"
+            android:layout_marginBottom="@dimen/margin_top_button_submission_submission_activity"
+            android:hint="@string/hint_email_address"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusBottomStart="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopStart="@dimen/radius_text_layout"
             app:layout_constraintBottom_toTopOf="@id/input_layout_github"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -208,6 +196,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email_adress"
                 android:layout_width="match_parent"
+                android:inputType="textEmailAddress"
                 android:layout_height="match_parent">
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -218,16 +207,16 @@
             android:id="@+id/input_layout_github"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="@dimen/margin_vertical_fab_leaderboar_activity"
 
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:hint="Project on GITHUB(Link)"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
+            android:layout_marginTop="@dimen/margin_top_button_submission_submission_activity"
+            android:layout_marginEnd="@dimen/margin_vertical_fab_leaderboar_activity"
+            android:hint="@string/hint_project_on_github_link"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusBottomStart="@dimen/radius_text_layout"
 
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="@dimen/radius_text_layout"
+            app:boxCornerRadiusTopStart="@dimen/radius_text_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input_layout_adressEmail">
@@ -235,6 +224,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_github_link"
                 android:layout_width="match_parent"
+
                 android:layout_height="match_parent">
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -251,13 +241,13 @@
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:visibility="invisible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/margin_top_progress_bar_submission_activity"
+            android:layout_marginBottom="@dimen/margin_vertical_fab_leaderboar_activity"
             android:indeterminate="true"
             android:indeterminateTint="@color/color_orange"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

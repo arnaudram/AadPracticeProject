@@ -8,4 +8,5 @@
     <color name="color_orange">#F2FF6D00</color>
     <color name="background_recycle_view">#F7D8D3D3</color>
     <color name="drawable_cancel_color_grey">#8A8383</color>
+    <color name="background_tablayout_leaderboar_activity">#00000000</color>
 </resources>

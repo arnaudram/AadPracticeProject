@@ -37,41 +37,41 @@ class SubmissionActivity : AppCompatActivity() {
         // viewModel
         val submissionViewModel by lazy { ViewModelProvider(this)[SubmissionViewModel::class.java] }
 
-        binding.submissionViewModel=submissionViewModel
-        binding.lifecycleOwner=this
+        binding.submissionViewModel = submissionViewModel
+        binding.lifecycleOwner = this
         //observing dialog viewModel
-        observeDialog=ViewModelProvider(this)[ObserveDialog::class.java]
-         submissionViewModel.onSubmit.observe(this, Observer {
-                 if(it){
-                          if (proceed()){
-                              if (fieldChecked()){
-                                     showProgressBar()
-                                  submissionViewModel.apply {
-                                      sendProject(entryGoogleForm)
-                                      hideProgressBar()
-                                       showUpResult(this)
+        observeDialog = ViewModelProvider(this)[ObserveDialog::class.java]
+        submissionViewModel.onSubmit.observe(this, Observer {
+            if (it) {
+                if (proceed()) {
+                    if (fieldChecked()) {
+                        showProgressBar()
+                        submissionViewModel.apply {
+                            sendProject(entryGoogleForm)
+                            hideProgressBar()
+                            showUpResult(this)
 
-                                  }
+                        }
 
-                              }
+                    }
 
-                          }
+                }
 
-                     submissionViewModel.doneSubmitting()
+                submissionViewModel.doneSubmitting()
 
-                 }
-         })
+            }
+        })
 
 
     }
 
     private fun showUpResult(submissionViewModel: SubmissionViewModel) {
         submissionViewModel.response.observe(this, Observer {
-             if (it){
-                 showSubmissionSuccessfulDialog()
-             }else{
-                 showSubmissionFailledDialog()
-             }
+            if (it) {
+                showSubmissionSuccessfulDialog()
+            } else {
+                showSubmissionFailledDialog()
+            }
         })
     }
 
@@ -83,55 +83,63 @@ class SubmissionActivity : AppCompatActivity() {
     }
 
     private fun showSubmissionSuccessfulDialog() {
-      Dialog(this).apply {
-          setContentView(R.layout.submission_successful)
-          setCancelable(true)
-      }.show()
+        Dialog(this).apply {
+            setContentView(R.layout.submission_successful)
+            setCancelable(true)
+        }.show()
 
     }
 
     private fun hideProgressBar() {
-        binding.progressBar.visibility= View.INVISIBLE
+        binding.progressBar.visibility = View.INVISIBLE
     }
 
     private fun showProgressBar() {
-        binding.progressBar.visibility= View.VISIBLE
+        binding.progressBar.visibility = View.VISIBLE
 
     }
 
     private fun proceed(): Boolean {
-        var areYouSure=false
-             ProceedSubmissionDialog().show(supportFragmentManager,"dialog_Proceed")
-              observeDialog.continueSubmissiion.observe(this, Observer {
-                  areYouSure=it
-              })
+        var areYouSure = false
+        ProceedSubmissionDialog().show(supportFragmentManager, "dialog_Proceed")
+        observeDialog.continueSubmissiion.observe(this, Observer {
+            areYouSure = it
+        })
 
 
-     return areYouSure
+        return areYouSure
     }
 
     private fun fieldChecked(): Boolean {
-        var requirementMet=false
-          var firstName=binding.editFirstName.toString()
-        var lastName=binding.editLastName.toString()
-        var emailAddress=binding.editEmailAdress.toString()
-        var linkToProject=binding.editGithubLink.toString()
-        if (firstName.isNotEmpty()){
-            requirementMet=true
+        var requirementMet = false
+        var firstName = binding.editFirstName.toString()
+        var lastName = binding.editLastName.toString()
+        var emailAddress = binding.editEmailAdress.toString()
+        var linkToProject = binding.editGithubLink.toString()
+        if (firstName.isNotEmpty()) {
+            requirementMet = true
+        } else {
+            binding.editFirstName.error = " required* "
         }
-        if (lastName.isNotEmpty()){
-            requirementMet=true
+        if (lastName.isNotEmpty()) {
+            requirementMet = true
+        } else {
+            binding.editLastName.error = " required* "
         }
-        if (emailAddress.isNotEmpty()){
-            requirementMet=true
+        if (emailAddress.isNotEmpty()) {
+            requirementMet = true
+        } else {
+            binding.editEmailAdress.error = " required* "
         }
-        if (linkToProject.isNotEmpty()){
-            requirementMet=true
+        if (linkToProject.isNotEmpty()) {
+            requirementMet = true
+        } else {
+            binding.editGithubLink.error = " required* "
         }
 
-            if (requirementMet){
-              entryGoogleForm=  EntryGoogleForm(firstName,lastName,emailAddress,linkToProject)
-            }
-        return  requirementMet
+        if (requirementMet) {
+            entryGoogleForm = EntryGoogleForm(firstName, lastName, emailAddress, linkToProject)
+        }
+        return requirementMet
     }
 }

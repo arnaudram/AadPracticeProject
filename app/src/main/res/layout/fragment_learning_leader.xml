@@ -22,7 +22,7 @@
             tools:listitem="@layout/item_learning_leader"
             tools:itemCount="16"
             android:background="@color/background_recycle_view"
-            android:padding="8dp"
+            android:padding="@dimen/margin_end_fab_leaderboar_activity"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -5,10 +5,10 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
-        android:elevation="6dp"
-        app:cardCornerRadius="10dp"
+        android:elevation="@dimen/card_elevation_failled_dialog_box"
+        app:cardCornerRadius="@dimen/radius_text_layout"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="@dimen/layout_height_appbar_leaderbord_activity">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -16,16 +16,16 @@
 
             <View
                 android:id="@+id/dialog_round_view"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_end_dialog_box"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_baseline_warning_24"
-                android:layout_width="150dp"
-                android:layout_height="150dp">
+                android:layout_width="@dimen/layout_height_centerview_dialog_box"
+                android:layout_height="@dimen/layout_height_centerview_dialog_box">
 
             </View>
             <TextView
                 android:text="@string/submission_not_successful"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_max_dialog_box"
                 android:layout_below="@id/dialog_round_view"
                 android:gravity="center"
                 style="@style/TextAppearance.MaterialComponents.Headline6"

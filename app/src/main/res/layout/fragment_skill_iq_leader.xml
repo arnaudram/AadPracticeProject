@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_skill_iq_leader"
-            android:padding="6dp"
+            android:padding="@dimen/margin_end_fab_leaderboar_activity"
             tools:itemCount="16"
             android:background="@color/background_recycle_view"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

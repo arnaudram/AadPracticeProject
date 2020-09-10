@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-          <variable
-              name="entityGads"
-              type="com.example.aadproject.data.EntityGads" />
+
+        <variable
+            name="entityGads"
+            type="com.example.aadproject.data.EntityGads" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:elevation="4dp"
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="@dimen/card_elevation_item_learning_leader">
 
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            app:cardElevation="4dp"
+            app:cardElevation="@dimen/card_elevation_item_learning_leader"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,10 +34,10 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/badge_top_learner"
-                    android:layout_width="90dp"
-                    android:layout_height="80dp"
+                    android:layout_width="@dimen/layout_width_imageview_item_learning_leader"
+                    android:layout_height="@dimen/layout_height_imageview_item_learning_leader"
 
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="@dimen/margin_start_imageview_imageview_item_learning_leader"
                     app:bind_learner_badge="@{entityGads}"
                     app:layout_constraintBottom_toBottomOf="parent"
 
@@ -45,30 +46,30 @@
                 </de.hdodenhof.circleimageview.CircleImageView>
 
                 <LinearLayout
-                    android:layout_marginStart="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_vertical_fab_leaderboar_activity"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tv_top_learner_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:textSize="18sp"
-                        android:textAlignment="textStart"
                         android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/margin_end_fab_leaderboar_activity"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/text_size_dialog_box"
                         app:bind_learner_name="@{entityGads}"
                         tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tv_top_learner_description"
                         android:layout_width="match_parent"
-                         android:textAlignment="textStart"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="start"
 
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="@dimen/margin_top_within_textview"
+                        android:textAlignment="textStart"
 
                         app:bind_learner_description="@{entityGads}" />
                 </LinearLayout>
