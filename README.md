@@ -60,4 +60,7 @@ This is the direct link to [my work here](https://drive.google.com/drive/folders
  ### Project Submission screen
  
  ![submission](https://user-images.githubusercontent.com/52896739/92668849-9e5ed080-f318-11ea-8864-f0927e33c1fb.png)
+ 
+ ![Screenshot_20200910-132302](https://user-images.githubusercontent.com/52896739/92730326-49ed3c80-f37c-11ea-9d56-76a116654b47.png)
+
 
