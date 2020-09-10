@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -91,11 +92,11 @@ class SubmissionActivity : AppCompatActivity() {
     }
 
     private fun hideProgressBar() {
-        binding.progressBar.visibility = View.INVISIBLE
+        binding.progressBar.visibility = ProgressBar.INVISIBLE
     }
 
     private fun showProgressBar() {
-        binding.progressBar.visibility = View.VISIBLE
+        binding.progressBar.visibility = ProgressBar.VISIBLE
 
     }
 
