@@ -4,4 +4,7 @@
     <string name="learning_description">%1$d Learning hours, %2$s.</string>
     <string name="skill_iq_description">%1$d Skill IQ Score,%2$s</string>
     <string name="text_submit">Submit</string>
+    <string name="are_you_sure">Are You Sure ?</string>
+    <string name="submission_successful">Submission Successful</string>
+    <string name="submission_not_successful">Submission not Successful</string>
 </resources>
