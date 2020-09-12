@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_appbar_leaderbord_activity"
+        android:elevation="@dimen/card_elevation_failled_dialog_box"
+        app:cardCornerRadius="@dimen/radius_text_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/dialog_round_view"
+                android:layout_width="@dimen/layout_height_centerview_dialog_box"
+                android:layout_height="@dimen/layout_height_centerview_dialog_box"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_end_dialog_box"
+                android:background="@drawable/ic_baseline_check_circle_24">
+
+            </View>
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog_round_view"
+                android:gravity="center"
+                android:text="@string/submission_successful"
+                android:textSize="@dimen/text_size_max_dialog_box">
+
+            </TextView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

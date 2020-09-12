@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="@dimen/card_elevation_dialog_box"
+            app:cardCornerRadius="@dimen/radius_text_layout"
+
+            android:id="@+id/dialog_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dialog_cancel"
+                    android:layout_marginTop="@dimen/margin_end_dialog_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/margin_end_dialog_box"
+                    android:drawableEnd="@drawable/ic_baseline_cancel_24"
+                    android:textSize="@dimen/text_size_dialog_box"
+                    app:drawableTint="@color/drawable_cancel_color_grey">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dialog_cancel"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_top_dialog_box"
+                    android:text="@string/are_you_sure"
+                    android:textSize="@dimen/text_size_max_dialog_box"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dialog_yes"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="@dimen/layout_with_button_yes"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/textView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_top_button_yes"
+                    android:text="@string/text_yes"
+                    android:layout_marginBottom="@dimen/margin_top_button_yes"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/text_size_max_dialog_box"
+                    app:cornerRadius="@dimen/radius_text_layout"
+                    app:strokeColor="@color/color_orange">
+
+                </com.google.android.material.button.MaterialButton>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
